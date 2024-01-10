@@ -24,34 +24,38 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         setVariable();
 
-        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = binding.userEdt.getText().toString();
-                String password = binding.passEdt.getText().toString();
 
-                if (!email.isEmpty() && !password.isEmpty()) {
-                    mAuth.signInWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                                    } else {
-                                        Toast.makeText(LoginActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                } else {
-                    Toast.makeText(LoginActivity.this, "Please fill out your username and password", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     private void setVariable() {
-        // Implement the necessary logic for setting variables if needed
+
+        binding.loginBtn.setOnClickListener(view -> {
+
+
+            String email = binding.userEdt.getText().toString();
+            String password = binding.passEdt.getText().toString();
+            if (!email.isEmpty() && !password.isEmpty()) {
+
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, task -> {
+
+
+                    if (task.isSuccessful()) {
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+            } else {
+                Toast.makeText(LoginActivity.this, "Please fill out your username and password", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
+
+    ;
 }
