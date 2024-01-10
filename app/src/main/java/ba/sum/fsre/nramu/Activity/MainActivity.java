@@ -1,8 +1,10 @@
-package ba.sum.fsre.nramu;
+package ba.sum.fsre.nramu.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import ba.sum.fsre.nramu.R;
 
 public class MainActivity extends AppCompatActivity {
 
