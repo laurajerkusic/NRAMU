@@ -70,7 +70,7 @@
                     android:layout_marginEnd="6dp"
                     android:background="@drawable/grey_background"
                     android:padding="12dp"
-                    android:src="@tools:sample/avatars"
+
                     app:srcCompat="@drawable/settings" />
 
                 <LinearLayout
@@ -101,6 +101,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginEnd="4dp"
                         android:padding="4dp"
                         android:src="@tools:sample/avatars"
                         app:srcCompat="@drawable/search_icon" />
@@ -237,7 +238,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
+                android:layout_height="wrap_content"
+                android:minHeight="300dp">
 
                 <ProgressBar
                     android:id="@+id/progressBarBestFood"
@@ -245,16 +247,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-                    app:layout_constraintStart_toStartOf="@+id/recyclerView"
+                    app:layout_constraintEnd_toEndOf="@+id/bestFoodView"
+                    app:layout_constraintStart_toStartOf="@+id/bestFoodView"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView"
+                    android:id="@+id/bestFoodView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -267,6 +271,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Choose Category"
+                android:layout_marginTop="16dp"
                 android:textColor="@color/blue_grey"
                 android:textSize="22dp"
                 android:textStyle="bold" />
@@ -281,12 +286,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/categoryView"
+                    app:layout_constraintEnd_toEndOf="@+id/CategoryView"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/categoryView" />
+                    app:layout_constraintTop_toTopOf="@+id/CategoryView" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/categoryView"
+                    android:id="@+id/CategoryView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
