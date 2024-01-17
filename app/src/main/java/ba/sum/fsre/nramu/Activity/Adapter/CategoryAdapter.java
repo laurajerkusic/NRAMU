@@ -1,6 +1,7 @@
 package ba.sum.fsre.nramu.Activity.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 
 import ba.sum.fsre.nramu.Activity.Domain.Category;
 import ba.sum.fsre.nramu.Activity.Domain.Foods;
+import ba.sum.fsre.nramu.Activity.ListFoodsActivity;
 import ba.sum.fsre.nramu.R;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewholder> {
@@ -83,6 +85,12 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
          Glide.with(context)
                  .load(drawableResourceId)
                  .into(holder.pic);
+         holder.itemView.setOnClickListener(v -> {
+             Intent intent=new Intent(context, ListFoodsActivity.class);
+             intent.putExtra("categoryId",Items.get(position).getId());
+             intent.putExtra("categoryName",Items.get(position).getName());
+             context.startActivity(intent);
+         });
     }
 
     @Override

@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "ba.sum.fsre.nramu"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "ba.sum.fsre.nramu"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
