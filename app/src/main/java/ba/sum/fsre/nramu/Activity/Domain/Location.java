@@ -9,11 +9,11 @@ public class Location {
 
     @Override
     public String toString() {
-        return  Loc;
+        return  Loc ;
     }
 
     public int getId() {
-        return Id;
+        return  Id;
     }
 
     public void setId(int id) {

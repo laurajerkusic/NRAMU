@@ -23,12 +23,12 @@ import ba.sum.fsre.nramu.Activity.ListFoodsActivity;
 import ba.sum.fsre.nramu.R;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewholder> {
-    ArrayList<Category> Items;
+    ArrayList<Category> items;
     Context context;
 
     public CategoryAdapter(ArrayList<Category> items) {
 
-        this.Items = items;
+        this.items = items;
 
 
 
@@ -44,7 +44,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
 
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.viewholder holder, int position) {
-        holder.titleTxt.setText(Items.get(position).getName());
+        holder.titleTxt.setText(items.get(position).getName());
 
          switch (position){
              case 0:{
@@ -80,15 +80,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
                  break;
              }
          }
-         int drawableResourceId=context.getResources().getIdentifier(Items.get(position).getImagePath(),
+         int drawableResourceId=context.getResources().getIdentifier(items.get(position).getImagePath(),
                  "drawable",holder.itemView.getContext().getPackageName());
          Glide.with(context)
                  .load(drawableResourceId)
                  .into(holder.pic);
          holder.itemView.setOnClickListener(v -> {
              Intent intent=new Intent(context, ListFoodsActivity.class);
-             intent.putExtra("categoryId",Items.get(position).getId());
-             intent.putExtra("categoryName",Items.get(position).getName());
+             intent.putExtra("categoryId",items.get(position).getId());
+             intent.putExtra("categoryName",items.get(position).getName());
              context.startActivity(intent);
          });
     }
@@ -97,7 +97,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
     public int getItemCount() {
 
 
-        return Items.size();
+        return items.size();
     }
 
     public class viewholder extends RecyclerView.ViewHolder{

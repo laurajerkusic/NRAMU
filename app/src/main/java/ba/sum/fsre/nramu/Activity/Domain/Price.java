@@ -9,7 +9,7 @@ public class Price {
 
     @Override
     public String toString() {
-        return  Value;
+        return  Value ;
     }
 
     public int getId() {

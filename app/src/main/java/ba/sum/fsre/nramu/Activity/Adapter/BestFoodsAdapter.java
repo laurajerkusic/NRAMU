@@ -20,12 +20,12 @@ import ba.sum.fsre.nramu.Activity.Domain.Foods;
 import ba.sum.fsre.nramu.R;
 
 public class BestFoodsAdapter extends RecyclerView.Adapter<BestFoodsAdapter.viewholder> {
-    ArrayList<Foods> Items;
+    ArrayList<Foods> items;
     Context context;
 
     public BestFoodsAdapter(ArrayList<Foods> items) {
 
-        this.Items = items;
+        this.items = items;
 
 
 
@@ -41,13 +41,13 @@ public class BestFoodsAdapter extends RecyclerView.Adapter<BestFoodsAdapter.view
 
     @Override
     public void onBindViewHolder(@NonNull BestFoodsAdapter.viewholder holder, int position) {
-         holder.titleTxt.setText(Items.get(position).getTitle());
-         holder.priceTxt.setText("$"+Items.get(position).getPrice());
-         holder.timeTxt.setText(Items.get(position).getTimeValue()+"min");
-         holder.starTxt.setText(""+Items.get(position).getStar());
+         holder.titleTxt.setText(items.get(position).getTitle());
+         holder.priceTxt.setText("$"+items.get(position).getPrice());
+         holder.timeTxt.setText(items.get(position).getTimeValue()+"min");
+         holder.starTxt.setText(""+items.get(position).getStar());
 
          Glide.with(context)
-                 .load(Items.get(position).getImagePath())
+                 .load(items.get(position).getImagePath())
                  .transform(new CenterCrop(),new RoundedCorners(30))
                  .into(holder.pic);
     }
@@ -56,7 +56,7 @@ public class BestFoodsAdapter extends RecyclerView.Adapter<BestFoodsAdapter.view
     public int getItemCount() {
 
 
-        return Items.size();
+        return items.size();
     }
 
     public class viewholder extends RecyclerView.ViewHolder{
