@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 
+import com.bumptech.glide.disklrucache.DiskLruCache;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -120,8 +121,11 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initLocation() {
-        DatabaseReference myRef=database.getReference("Location:");
+        DatabaseReference myRef=database.getReference("Location");
         ArrayList<Location> list=new ArrayList<>();
+
+
+
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -144,7 +148,7 @@ public class MainActivity extends BaseActivity {
 
     }
     private void initTime() {
-        DatabaseReference myRef=database.getReference("Time:");
+        DatabaseReference myRef=database.getReference("Time");
         ArrayList<Time> list=new ArrayList<>();
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -168,7 +172,7 @@ public class MainActivity extends BaseActivity {
 
     }
     private void initPrice() {
-        DatabaseReference myRef=database.getReference("Price:");
+        DatabaseReference myRef=database.getReference("Price");
         ArrayList<Price> list=new ArrayList<>();
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
