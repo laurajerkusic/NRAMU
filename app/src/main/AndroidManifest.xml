@@ -14,15 +14,20 @@
         android:theme="@style/Theme.NRAMU"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ListFoodsActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.MainActivity"
-            android:exported="true"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Activity.SignupActivity"
             android:exported="false" />
@@ -34,9 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".Activity.IntroActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

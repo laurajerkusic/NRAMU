@@ -1,6 +1,7 @@
 package ba.sum.fsre.nramu.Activity.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 
 import java.util.ArrayList;
 
+import ba.sum.fsre.nramu.Activity.DetailActivity;
 import ba.sum.fsre.nramu.Activity.Domain.Foods;
 import ba.sum.fsre.nramu.R;
 
@@ -46,6 +48,12 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.viewho
                 .load(items.get(position).getImagePath())
                 .transform(new CenterCrop(),new RoundedCorners(30))
                 .into(holder.pic);
+
+        holder.itemView.setOnClickListener(v -> {
+           Intent intent= new Intent(context, DetailActivity.class);
+            intent.putExtra("object",items.get(position));
+            context.startActivity(intent);
+        });
 
     }
 
