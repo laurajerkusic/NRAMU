@@ -87,8 +87,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
                  .into(holder.pic);
          holder.itemView.setOnClickListener(v -> {
              Intent intent=new Intent(context, ListFoodsActivity.class);
-             intent.putExtra("categoryId",items.get(position).getId());
-             intent.putExtra("categoryName",items.get(position).getName());
+             intent.putExtra("CategoryId",items.get(position).getId());
+             intent.putExtra("CategoryName",items.get(position).getName());
              context.startActivity(intent);
          });
     }

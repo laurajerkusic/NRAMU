@@ -49,14 +49,14 @@ public class ListFoodsActivity extends BaseActivity {
     private void initList() {
         DatabaseReference myRef=database.getReference("Foods");
         binding.progressBar.setVisibility(View.VISIBLE);
-        ArrayList<Foods>list= new ArrayList<>();
+        ArrayList<Foods> list= new ArrayList<>();
 
         Query query;
 
         if(isSearch){
             query=myRef.orderByChild("Title").startAt(searchText).endAt(searchText+'\uf8ff');
         }else{
-            query=myRef.orderByChild("categoryId").equalTo(categoryId);
+            query=myRef.orderByChild("CategoryId").equalTo(categoryId);
         }
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -84,8 +84,8 @@ public class ListFoodsActivity extends BaseActivity {
 
     private void getIntentExtra()
     {
-        categoryId=getIntent().getIntExtra("categoryId",0);
-        categoryName=getIntent().getStringExtra("categoryName");
+        categoryId=getIntent().getIntExtra("CategoryId",0);
+        categoryName=getIntent().getStringExtra("CategoryName");
         searchText=getIntent().getStringExtra("text");
         isSearch=getIntent().getBooleanExtra("isSearch",false);
 
