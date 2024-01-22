@@ -47,16 +47,16 @@ private double tax;
     }
 
     private void calculateCart() {
-        double parcentTax=0.02; // 2%
+        //double parcentTax=0.02; // 2%
         double delivery=10; // Dolar
 
-        tax=Math.round((managmentCart.getTotalFee()*parcentTax)*100.0)/100.0;
+        tax=Math.round((managmentCart.getTotalFee())*100.0)/100.0;
 
-        double total = Math.round((managmentCart.getTotalFee()+tax+delivery)*100.0)/100.0;
+        double total = Math.round((managmentCart.getTotalFee()+delivery)*100.0)/100.0;
         double itemTotal=Math.round(managmentCart.getTotalFee()*100.0)/100.0;
 
         binding.totalFeeTxt.setText("$"+itemTotal);
-        binding.taxTxt.setText("$"+tax);
+
         binding.deliveryTxt.setText("$"+delivery);
         binding.totalTxt.setText("$"+total);
     }

@@ -51,33 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/editTextText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/grey_background"
-                    android:ems="10"
-                    android:hint="Enter Your Code"
-                    android:inputType="text"
-                    android:textAlignment="center"
-                    android:textColor="@color/blue_grey"
-                    android:textColorHint="@color/blue_grey"
-                    android:textSize="14sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="145dp"
-                    android:layout_height="40dp"
-                    android:background="@drawable/red_button_background2"
-
-                    android:text="Apply Coupon"
-                    android:textColor="@color/white" />
-            </LinearLayout>
+                android:orientation="horizontal"/>
 
             <TextView
                 android:id="@+id/textView13"
@@ -116,18 +90,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Delivery"
+                    app:layout_constraintBottom_toBottomOf="@+id/deliveryTxt"
                     app:layout_constraintStart_toStartOf="@+id/textView14"
-                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    style="@style/textStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Total Tax"
-                    app:layout_constraintStart_toStartOf="@+id/textView15"
-                    app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView14"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <TextView
                     android:id="@+id/totalFeeTxt"
@@ -136,6 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:text="$-"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView14"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textView14" />
 
@@ -146,49 +113,37 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="$-"
+                    app:layout_constraintBottom_toTopOf="@+id/totalTxt"
                     app:layout_constraintEnd_toEndOf="@+id/totalFeeTxt"
                     app:layout_constraintTop_toBottomOf="@+id/totalFeeTxt" />
-
-                <TextView
-                    android:id="@+id/taxTxt"
-                    style="@style/textStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="$-"
-                    app:layout_constraintEnd_toEndOf="@+id/deliveryTxt"
-                    app:layout_constraintTop_toBottomOf="@+id/deliveryTxt" />
 
                 <View
                     android:id="@+id/view3"
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:background="#ABABAB"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+                    tools:layout_editor_absoluteY="120dp" />
 
                 <TextView
                     android:id="@+id/textView27"
                     style="@style/textStyleBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:text="Total"
-                    app:layout_constraintStart_toStartOf="@+id/textView16"
-                    app:layout_constraintTop_toBottomOf="@+id/view3" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView15"
+                    app:layout_constraintTop_toTopOf="@+id/view3" />
 
                 <TextView
                     android:id="@+id/totalTxt"
                     style="@style/textStyleBold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:text="$-"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/view3"
                     app:layout_constraintTop_toTopOf="@+id/textView27" />
 
