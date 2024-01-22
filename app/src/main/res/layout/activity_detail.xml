@@ -50,6 +50,7 @@
                     android:layout_marginTop="24dp"
                     android:padding="8dp"
 
+                    app:tint="@color/white"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/arrow" />
@@ -202,7 +203,7 @@ onions. "
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:gravity="center"
-                    android:text="0"
+                    android:text="1"
                     android:textSize="16dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
