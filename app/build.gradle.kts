@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "ba.sum.fsre.nramu"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "ba.sum.fsre.nramu"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -37,11 +37,12 @@ dependencies {
 
     implementation ("com.google.code.gson:gson:2.8.8")
 
-    implementation("com.google.firebase:firebase-auth:22.3.0")
+    implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.5.0")
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.github.bumptech.glide:glide:4.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-database:20.3.0")
     testImplementation("junit:junit:4.13.2")
